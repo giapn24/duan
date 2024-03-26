@@ -1,0 +1,25 @@
+﻿@model IEnumerable<dynamic>
+
+<h2>Báo cáo thống kê</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Mã ngành</th>
+            <th>Tên ngành</th>
+            <th>Số hồ sơ</th>
+            <th>Phần trăm (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaNganh</td>
+                <td>@item.TenNganh</td>
+                <td>@item.SoHoSo</td>
+                <td>@item.PhanTram</td>
+            </tr>
+        }
+    </tbody>
+</table>

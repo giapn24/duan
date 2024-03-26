@@ -1,0 +1,14 @@
+﻿@model vesion15.Models.Nganh
+
+<h1>Xóa ngành nghề</h1>
+
+<h3>Bạn có chắc chắn muốn xóa ngành nghề này?</h3>
+<div>
+    <h4>@Model.TenNganh</h4>
+</div>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="MaNganh" />
+    <input type="submit" value="Xóa" class="btn btn-danger" /> |
+    <a asp-action="Index">Hủy</a>
+</form>

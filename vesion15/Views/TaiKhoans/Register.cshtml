@@ -1,0 +1,24 @@
+﻿@model vesion15.Models.TaiKhoan
+<h1>Đăng ký Tài Khoản</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TenDangNhap" class="control-label"></label>
+                <input asp-for="TenDangNhap" class="form-control" />
+                <span asp-validation-for="TenDangNhap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatKhau" class="control-label"></label>
+                <input asp-for="MatKhau" class="form-control" />
+                <span asp-validation-for="MatKhau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Đăng Ký" class="btn btn-primary" />
+                Trở Lại <a asp-action="Login">Đăng Nhập</a>
+            </div>
+        </form>
+    </div>
+</div>

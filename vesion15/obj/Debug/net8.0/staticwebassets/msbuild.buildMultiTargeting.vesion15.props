@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\vesion15.props" />
+</Project>

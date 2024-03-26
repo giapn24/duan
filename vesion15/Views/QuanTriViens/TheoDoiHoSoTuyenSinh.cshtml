@@ -1,0 +1,43 @@
+﻿@model IEnumerable<vesion15.Models.HoSo>
+
+<h2>Theo dõi hồ sơ tuyển sinh</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Mã hồ sơ</th>
+            <th>Họ Và Tên</th>
+            <th>Ngành học</th>
+            <th>Ảnh Hồ Sơ </th>
+            <th>Ngày nộp</th>
+            <th>Trạng thái</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.MaHS)</td>
+                <td>@Html.DisplayFor(modelItem => item.HoTen)</td>
+                <td>@Html.DisplayFor(modelItem => item.Nganh)</td>
+                <td>
+                    <a href="@Url.Content(item.AnhHoSo)" target="_blank">
+                        <img src="@Url.Content(item.AnhHoSo)" alt="Ảnh Hồ Sơ" width="50" height="50" />
+                    </a>
+                </td>               
+                <td>@Html.DisplayFor(modelItem => item.TrangThai)</td>
+                <td>
+                    <form asp-action="UpdateStatus" method="post">
+                        <input type="hidden" name="MaHS" value="@item.MaHS" />
+                        <select name="TrangThai">
+                            <option value="Không đạt">Không đạt</option>
+                            <option value="Trúng tuyển">Trúng tuyển</option>
+                        </select>
+                        <input type="submit" value="Cập nhật" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
